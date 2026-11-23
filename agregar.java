@@ -1,5 +1,5 @@
 
-package persona;
+package inventario;
 
 import conexion.conexion;
 import java.sql.Connection;
@@ -13,12 +13,11 @@ public class agregar {
 
     public static void main(String[] args) {
 
-        conexion con = new conexion();
         Connection cn;
         Statement st;
         ResultSet rs;
 
-        String codigo = "22345";
+        String codigo = "42345";
         String nombre = "Bandas de freno";
         String modelo = "GS 125";
         String cantidad = "6";
@@ -34,7 +33,9 @@ public class agregar {
 
         try {
 
-            cn = con.getConnection ();
+            conexion con = new conexion();
+
+            cn = con.getConnection();
             st = cn.createStatement();
 
             st.executeUpdate(sql);
